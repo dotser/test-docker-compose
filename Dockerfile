@@ -11,7 +11,11 @@ FROM ubuntu
 # CMD ["python", "/app/app.py"]
 
 
-RUN apt-get update && \
-    apt-get install -yq nginx
+RUN apt-get update -qq && \
+    apt-get install -yqq curl nginx
 
 EXPOSE 80
+
+VOLUME ["/usr/share/nginx/html/"]
+
+CMD ["nginx"]
