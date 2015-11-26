@@ -1,11 +1,11 @@
-FROM ubuntu:14.04
+FROM ubuntu
 
-ADD . /code
+ADD app /app
 
 RUN apt-get update && \
-    apt-get install -yq python-pip && \
-    pip install -r /code/requirements.txt
+    apt-get install -yq python python-dev python-pip && \
+    pip install -r /app/requirements.txt
 
 EXPOSE 5000
 
-CMD ["python", "/code/server.py"]
+CMD ["python", "/app/app.py"]
