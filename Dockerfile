@@ -1,10 +1,11 @@
-FROM ubuntu:14-04
+FROM ubuntu:14.04
 
-RUN apt-get update \
-    && apt-get install
-    && pip install -r requirements.txt
+ADD . /code
 
-ADD . /srv
+RUN apt-get update && \
+    apt-get install -yq python-pip && \
+    pip install -r /code/requirements.txt
+
 EXPOSE 5000
 
-ENTRYPOINT
+CMD ["python", "/code/server.py"]
