@@ -7,4 +7,4 @@ app = flask.Flask(__name__)
 def hello(name='World'):
     return flask.render_template('hello.html', name=name)
 
-app.run()
+app.run(host='0.0.0.0')
