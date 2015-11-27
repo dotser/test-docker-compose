@@ -1,21 +1,21 @@
 FROM ubuntu
 
-# ADD app /app
+ADD app /app
 
-# RUN apt-get update && \
-#     apt-get install -yq python python-dev python-pip && \
-#     pip install -r /app/requirements.txt
+RUN apt-get update && \
+    apt-get install -yq curl python python-pip && \
+    pip install -r /app/requirements.txt
 
-# EXPOSE 500
+EXPOSE 5000
 
-# CMD ["python", "/app/app.py"]
+CMD ["python", "/app/app.py"]
 
 
-RUN apt-get update -qq && \
-    apt-get install -yqq curl nginx
+# RUN apt-get update -qq && \
+#     apt-get install -yqq curl nginx
 
-VOLUME ["/usr/share/nginx/html/"]
+# VOLUME ["/usr/share/nginx/html/"]
 
-EXPOSE 80 443
+# EXPOSE 80 443
 
-CMD ["nginx", "-g", "daemon off;"]
+# CMD ["nginx", "-g", "daemon off;"]
