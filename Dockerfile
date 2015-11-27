@@ -6,7 +6,7 @@ RUN apt-get update && \
     apt-get install -yq curl python python-pip && \
     pip install -r /app/requirements.txt
 
-EXPOSE 5000
+EXPOSE 80
 
 CMD ["python", "/app/app.py"]
 
