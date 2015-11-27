@@ -8,14 +8,4 @@ RUN apt-get update && \
 
 EXPOSE 80
 
-CMD ["python", "/app/app.py"]
-
-
-# RUN apt-get update -qq && \
-#     apt-get install -yqq curl nginx
-
-# VOLUME ["/usr/share/nginx/html/"]
-
-# EXPOSE 80 443
-
-# CMD ["nginx", "-g", "daemon off;"]
+CMD ["/app/app.py"]
