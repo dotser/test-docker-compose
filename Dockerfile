@@ -14,8 +14,8 @@ FROM ubuntu
 RUN apt-get update -qq && \
     apt-get install -yqq curl nginx
 
-EXPOSE 80
-
 VOLUME ["/usr/share/nginx/html/"]
+
+EXPOSE 80 443
 
 CMD ["nginx"]
