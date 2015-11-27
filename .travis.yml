@@ -5,6 +5,7 @@ services:
 
 before_install:
   - docker build -t test .
+  - docker run -it test curl localhost
 
 script:
   - echo OK
