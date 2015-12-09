@@ -1,11 +1,7 @@
-FROM ubuntu
+FROM python:2.7
 
-ADD app /app
+ADD app/ /app
+WORKDIR /app
+RUN pip install -r requirements.txt
 
-RUN apt-get update && \
-    apt-get install -yq curl python python-pip && \
-    pip install -r /app/requirements.txt
-
-EXPOSE 80
-
-CMD ["/app/app.py"]
+CMD python app.py

@@ -4,6 +4,7 @@ machine:
 
 test:
   override:
-    - docker build -t test .
-    - docker run -d -p 80:80 test
-    - curl --retry 2 --retry-delay 5 -v http://localhost:80
+    # - docker build -t test .
+    # - docker run -d -p 80:80 test
+    - docker-compose up
+    - curl --retry 2 --retry-delay 5 -v http://localhost:5000
