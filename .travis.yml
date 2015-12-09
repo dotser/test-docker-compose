@@ -12,7 +12,4 @@ script:
   - curl --retry 2 --retry-delay 5 -v http://localhost:5000
 
 after_script:
-  # - docker build -t test .
-  # - docker run -d -p 80:80 test
   - docker-compose rm -f
-
